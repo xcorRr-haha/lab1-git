@@ -20,4 +20,4 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          extra_args: --no-verification
+          extra_args: --since-commit ${{ github.event.pull_request.base.sha }} --only-verified --fail
